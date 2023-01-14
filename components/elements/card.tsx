@@ -7,7 +7,20 @@ import { CardProps } from '../../interfaces';
 
 const Card: React.FC<CardProps> = ({ displayName, price, returnPerc, TVL, displayImage, pairs, gradientStop }: CardProps) => {
     const getClassName = () => {
-        return `absolute -m-16 -mt-[58px] max-w-[105px] rounded-full bg-gradient-to-b from-transparent ${gradientStop} align-middle shadow-xl lg:-ml-[52px]`;
+        switch (displayName) {
+            case "Bitcoin (BTC)":
+                return "rounded-full bg-gradient-to-b from-transparent via-transparent to-orange-400";
+            case "Solana (SOL)":
+                return "rounded-full bg-gradient-to-b from-transparent via-transparent to-indigo-500";
+            case "Ethereum (ETH)":
+                return "rounded-full bg-gradient-to-b from-transparent via-transparent to-indigo-200"
+            case "Binance USD (BUSD)":
+                return "rounded-full bg-gradient-to-b from-transparent via-transparent to-yellow-300";
+            case "Shiba Inu (SHIB)":
+                return "rounded-full bg-gradient-to-b from-transparent via-transparent to-red-400"
+            default:
+                return `rounded-full bg-gradient-to-b from-transparent ${gradientStop}`;
+        }
     }
     return (
         <div className="cursor-pointer w-full rounded-2xl mx-8">
@@ -15,7 +28,7 @@ const Card: React.FC<CardProps> = ({ displayName, price, returnPerc, TVL, displa
                 <div className="flex justify-center">
                     <div className="relative">
                         <div className="rounded-full absolute -m-16 -mt-[58px] max-w-[105px]  align-middle border-solid border-2 border-gray-100/[0.15] lg:-ml-[52px]">
-                            <div className={`rounded-full bg-gradient-to-b from-transparent via-transparent ${gradientStop}`}>
+                            <div className={getClassName()}>
                                 <img src={displayImage} className="p-7" />
                             </div>
                         </div>

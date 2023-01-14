@@ -23,19 +23,15 @@ const CardList = () => {
     });
 
     return (
-        <div>
+        <div className="scale-[0.8] ">
             <div className="flex items-center justify-start mb-32 ml-12">
                 <TrendingIcon />
                 <div className="m-2"></div>
                 <div className="font-semibold text-white">Trending Assets</div>
             </div>
-            <div className="flex w-full flex-1 flex-col items-center justify-center">
-                <div className="flex items-center justify-center w-full h-full">
-                    <div className="w-full relative flex items-center justify-center">
-                        <div id="slider" className="flex items-center justify-start">
-                            {cardListToRender}
-                        </div>
-                    </div>
+            <div className="mx-12">
+                <div className="flex items-center justify-center">
+                    {cardListToRender}
                 </div>
             </div>
         </div>
