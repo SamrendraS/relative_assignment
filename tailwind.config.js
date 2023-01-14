@@ -6,7 +6,17 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'background': '#14172B',
+        'coin-label': '#737BAE',
+        'coin-sublabel': "#5A5F7D",
+        'label-value': '#ECF0FF'
+      },
+      fontFamily:{
+        'Tomorrow': ['Tomorrow', 'sans-serif']
+      }
+    }
   },
   plugins: [],
 }
